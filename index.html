@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>E-Commerce Website</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="products">
+        <div class="product-card">
+            <img src="product1.jpg" alt="Product 1">
+            <h2>Product 1</h2>
+            <p>Description of Product 1.</p>
+            <span class="price">$19.99</span>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="product2.jpg" alt="Product 2">
+            <h2>Product 2</h2>
+            <p>Description of Product 2.</p>
+            <span class="price">$29.99</span>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Add more product cards as needed -->
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Wait for the DOM to be fully loaded
+
+    // Get all "Add to Cart" buttons
+    const addToCartButtons = document.querySelectorAll('.product-card button');
+
+    // Add click event listener to each button
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Get the product details from the clicked button's parent element
+            const productCard = button.closest('.product-card');
+            const productName = productCard.querySelector('h2').innerText;
+            const productPrice = productCard.querySelector('.price').innerText;
+
+            // Log a message to the console (you can customize this part)
+            console.log(`Added ${productName} to the cart. Price: ${productPrice}`);
+        });
+    });
+});
+
+    </script>
+</body>
+
+</html>
